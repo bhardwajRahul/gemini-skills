@@ -24,43 +24,35 @@ Our evaluations found that adding this skill improved an agent's ability to
 generate correct API code following best practices to 87% with Gemini 3 Flash
 and 96% with Gemini 3 Pro.
 
+## Skills in this repo
+
+| Skill | Description |
+| :--- | :--- |
+| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for developing Gemini-powered apps. Provides the best practices for building apps that use the Gemini API. |
+| [`vertex-ai-api-dev`](skills/vertex-ai-api-dev) | Skill for developing Gemini-powered apps on Google Cloud Vertex AI using the Gen AI SDK. Covers tools, multimodal generation, caching, and batch prediction. |
+
 ## Installation
 
-Install from this repository using `npx skills`.
+You can browse and install skills using either the [Vercel skills CLI](https://skills.sh) or the [Context7 skills CLI](https://context7.com).
+
+### Using [Vercel skills CLI](https://skills.sh)
 
 ```sh
-# Show me what you got.
+# Interactively browse and install skills.
 npx skills add google-gemini/gemini-skills --list
 
-# Install a specific skill.
-npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
+# Install a specific skill (e.g., vertex-ai-api-dev).
+npx skills add google-gemini/gemini-skills --skill vertex-ai-api-dev --global
 ```
 
-Or use the Context7 skills CLI.
+### Using [Context7 skills CLI](https://context7.com)
 
 ```sh
 # Interactively browse and install skills.
 npx ctx7 skills install /google-gemini/gemini-skills
 
-# Install a specific skill.
-npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
-```
-
-## Skills in this repo
-
-### gemini-api-dev
-
-Skill for developing Gemini-powered apps. Provides the best practices for
-building apps that use the Gemini API.
-
-```sh
-# Vercel skills
-npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
-```
-
-```sh
-# Context7 skills
-npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
+# Install a specific skill (e.g., vertex-ai-api-dev).
+npx ctx7 skills install /google-gemini/gemini-skills vertex-ai-api-dev
 ```
 
 ## Disclaimer
