@@ -15,7 +15,7 @@ circulation](https://ai.google.dev/gemini-api/docs/thinking#signatures)) or SDK
 changes.
 
 [Skills](https://agentskills.io/) are a lightweight technique for adding
-relevent context to your agents. This repo contains skills related to building
+relevant context to your agents. This repo contains skills related to building
 apps powered by the Gemini API.
 
 ### Performance
@@ -24,70 +24,37 @@ Our evaluations found that adding this skill improved an agent's ability to
 generate correct API code following best practices to 87% with Gemini 3 Flash
 and 96% with Gemini 3 Pro.
 
+## Skills in this repo
+
+| Skill | Description |
+| :--- | :--- |
+| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for developing Gemini-powered apps. Provides the best practices for building apps that use the Gemini API. |
+| [`vertex-ai-api-dev`](skills/vertex-ai-api-dev) | Skill for developing Gemini-powered apps on Google Cloud Vertex AI using the Gen AI SDK. Covers tools, multimodal generation, caching, and batch prediction. |
+| [`gemini-live-api-dev`](skills/gemini-live-api-dev) | Skill for building real-time, bidirectional streaming apps with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice activity detection, native audio features, function calling, and session management. |
+| [`gemini-interactions-api`](skills/gemini-interactions-api) | Skill for building apps with the [Gemini Interactions API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, Deep Research agents, deprecated model guardrails, and both Python and TypeScript SDKs. |
+
 ## Installation
 
-Install from this repository using `npx skills`.
+You can browse and install skills using either the [Vercel skills CLI](https://skills.sh) or the [Context7 skills CLI](https://context7.com).
+
+### Using [Vercel skills CLI](https://skills.sh)
 
 ```sh
-# Show me what you got.
+# Interactively browse and install skills.
 npx skills add google-gemini/gemini-skills --list
 
-# Install a specific skill.
+# Install a specific skill (e.g., gemini-api-dev).
 npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
 ```
 
-Or use the Context7 skills CLI.
+### Using [Context7 skills CLI](https://context7.com)
 
 ```sh
 # Interactively browse and install skills.
 npx ctx7 skills install /google-gemini/gemini-skills
 
-# Install a specific skill.
-npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
-```
-
-## Skills in this repo
-
-### gemini-api-dev
-
-Skill for developing Gemini-powered apps. Provides the best practices for
-building apps that use the Gemini API.
-
-```sh
-# Vercel skills
-npx skills add google-gemini/gemini-skills --skill gemini-api-dev --global
-```
-
-```sh
-# Context7 skills
-npx ctx7 skills install /google-gemini/gemini-skills gemini-api-dev
-```
-
-### gemini-live-api-dev
-
-Skill for building real-time, bidirectional streaming apps with the Gemini Live
-API. Covers WebSocket-based audio/video/text streaming, voice activity
-detection, native audio features, function calling, and session management.
-
-```sh
-# Vercel skills
-npx skills add google-gemini/gemini-skills --skill gemini-live-api-dev --global
-```
-
-```sh
-# Context7 skills
-npx ctx7 skills install /google-gemini/gemini-skills gemini-live-api-dev
-```
-
-### gemini-interactions-api
-
-Skill for building apps with the [Gemini Interactions API](https://ai.google.dev/gemini-api/docs/interactions?ua=chat). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, Deep Research agents, deprecated model guardrails, and both Python and TypeScript SDKs.
-
-```bash
-# Vercel skills
-npx skills add google-gemini/gemini-skills --skill gemini-interactions-api --global
-# Context7 skills
-npx ctx7 skills install /google-gemini/gemini-skills gemini-interactions-api
+# Install a specific skill (e.g., vertex-ai-api-dev).
+npx ctx7 skills install /google-gemini/gemini-skills vertex-ai-api-dev
 ```
 
 ## Disclaimer
