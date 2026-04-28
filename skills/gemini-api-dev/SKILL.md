@@ -143,7 +143,7 @@ If no MCP documentation tools are available, fetch from the official docs:
 
 **Index URL**: `https://ai.google.dev/gemini-api/docs/llms.txt`
 
-Use `fetch_url` to:
+This index contains links to all documentation pages in .md.txt format. Use web fetch tools to:
 1. Fetch `llms.txt` to discover available pages
 2. Fetch specific pages (e.g., `https://ai.google.dev/gemini-api/docs/function-calling.md.txt`)
 
