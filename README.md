@@ -11,7 +11,7 @@ and best practices evolve quickly.
 This leaves a knowledge gap that language models can't solve on their own. For
 example, models don't know about themselves when they're trained, and they
 aren't necessarily aware of subtle changes in best practices (like [thought
-circulation](https://ai.google.dev/gemini-api/docs/thinking#signatures)) or SDK
+circulation](https://ai.google.dev/gemini-api/docs/thought-signatures)) or SDK
 changes.
 
 [Skills](https://agentskills.io/) are a lightweight technique for adding
