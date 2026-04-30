@@ -28,7 +28,7 @@ and 96% with Gemini 3 Pro.
 
 > [!IMPORTANT]
 > The `vertex-ai-api-dev` skill has moved to
-> [`google/cloud/gemini-api`](https://github.com/google/skills/blob/main/skills/cloud/gemini-api).
+> [skills/cloud/gemini-api](https://github.com/google/skills/tree/main/skills/cloud/gemini-api).
 
 | Skill | Description |
 | :--- | :--- |
