@@ -52,7 +52,7 @@ For full before/after code examples, fetch the [Migration Guide](https://ai.goog
 |-------|--------|-------------------|
 | `gemini-2.0-flash` | Deprecated | `gemini-3.5-flash` |
 | `gemini-2.0-flash-lite` | Deprecated | `gemini-3.1-flash-lite-preview` |
-| `gemini-1.5-pro` | Deprecated | `gemini-3.1-pro-preview` |
+| `gemini-1.5-pro` | Deprecated | `gemini-3.5-flash` |
 | `gemini-1.5-flash` | Deprecated | `gemini-3.5-flash` |
 
 ### Active Legacy Models (migration recommended)
