@@ -120,7 +120,7 @@ def upload_file(file_path, display_name=None, api_key=None):
         )
         file_obj = client.files.upload(file=file_path, config=config)
         # Convert Pydantic File model to dictionary with both camelCase and snake_case keys for compatibility
-        file_dict = file_obj.model_dump()
+        file_dict = json.loads(file_obj.model_dump_json())
         # Add camelCase field for mimeType
         if "mime_type" in file_dict:
             file_dict["mimeType"] = file_dict["mime_type"]
@@ -151,7 +151,7 @@ def wait_for_active(file_name, api_key, poll_interval=3, max_attempts=30, backof
             
             if state_str == "ACTIVE":
                 print("File is ACTIVE and ready for generations!")
-                file_dict = file_obj.model_dump()
+                file_dict = json.loads(file_obj.model_dump_json())
                 if "mime_type" in file_dict:
                     file_dict["mimeType"] = file_dict["mime_type"]
                 return file_dict

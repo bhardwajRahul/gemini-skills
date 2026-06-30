@@ -17,7 +17,6 @@ import urllib.request
 import urllib.error
 import uuid
 from google import genai
-from google.genai import types
 
 # Load local upload helper logic inline to prevent dependency issues
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
