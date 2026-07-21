@@ -30,7 +30,7 @@ description: Use this skill when writing code that calls the Gemini API for text
 
 ### Current Agents
 
-- `antigravity-preview-05-2026`: Antigravity Agent — general-purpose managed agent with code execution, file management, and web access in a sandboxed Linux environment (powered by `gemini-3.6-flash` by default)
+- `antigravity-preview-05-2026`: Antigravity Agent — general-purpose managed agent with code execution, file management, and web access in a sandboxed Linux environment
 - `deep-research-preview-04-2026`: Deep Research — fast, interactive
 - `deep-research-max-preview-04-2026`: Deep Research Max — maximum exhaustiveness
 - **Custom agents**: Create your own via `client.agents.create()`
@@ -368,8 +368,6 @@ For streaming with tools, thinking, agents, and image generation see the full [S
 
 **Advanced Features:**
 - [Latest Models (3.6 Flash & 3.5 Flash-Lite)](https://ai.google.dev/gemini-api/docs/latest-model.md.txt)
-- [Gemini 3.5](https://ai.google.dev/gemini-api/docs/interactions/whats-new-gemini-3.5.md.txt)
-- [Gemini 3](https://ai.google.dev/gemini-api/docs/interactions/gemini-3.md.txt)
 - [Flex Inference](https://ai.google.dev/gemini-api/docs/interactions/flex-inference.md.txt)
 - [Priority Inference](https://ai.google.dev/gemini-api/docs/interactions/priority-inference.md.txt)
 
