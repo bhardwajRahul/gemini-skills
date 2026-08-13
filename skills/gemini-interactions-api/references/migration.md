@@ -18,7 +18,7 @@ Even imperative requests like "migrate my code", "upgrade to gemini 3", "migrate
 **Sizing the scope (large repos).** Before asking, get a per-directory count:
 
 ```sh
-rg -l "generate_content\|generateContent\|gemini-2\.0\|gemini-1\.5\|gemini-2\.5\|gemini-3\.5\|gemini-3\.6\|gemini-3\.7\|thinking_budget\|temperature" --type-not md | cut -d/ -f1 | sort | uniq -c | sort -rn
+rg -l "generate_content|generateContent|gemini-2\.0|gemini-1\.5|gemini-2\.5|gemini-3\.5|gemini-3\.6|gemini-3\.7|thinking_budget|temperature" --type-not md | cut -d/ -f1 | sort | uniq -c | sort -rn
 ```
 
 Present the breakdown in your question (e.g. *"Found 42 references across 3 directories: src/ (28), tests/ (10), scripts/ (4). Which to migrate?"*).
