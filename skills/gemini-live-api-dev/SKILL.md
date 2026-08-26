@@ -281,7 +281,7 @@ async with client.aio.live.connect(model="gemini-3.5-transcribe-live", config=co
 const session = await ai.live.connect({
   model: 'gemini-3.5-transcribe-live',
   config: {
-    responseModalities: [Modality.TEXT],
+    responseModalities: ['text'],
     inputAudioTranscription: { mode: 'smart' }
   },
   callbacks: {
