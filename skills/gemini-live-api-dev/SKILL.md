@@ -253,7 +253,7 @@ To enable translation, specify a `TranslationConfig` object inside your live ses
 
 ## Live Streaming Transcription (Gemini Live Transcribe)
 
-The Live API supports real-time streaming speech-to-text over WebSockets with low-latency interim hypotheses, finalized transcripts, and Hybrid VAD. For full details, see the [Live Transcription Guide](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe.md.txt) and [Colab Cookbook](https://colab.research.google.com/drive/1py8z3YscD9SaYBshBW7k6y6V6TbcB8PF).
+The Live API supports real-time streaming speech-to-text over WebSockets with low-latency interim hypotheses, finalized transcripts, and Hybrid VAD. For full details, see the [Live Transcription Guide](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe.md.txt) and [Colab Cookbook](https://colab.research.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Get_started_transcribe.ipynb).
 
 ### Model
 - `gemini-3.5-transcribe-live`
