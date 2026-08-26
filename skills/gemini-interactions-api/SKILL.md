@@ -16,6 +16,7 @@ description: Use this skill when writing code that calls the Gemini API for text
 - `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model for high-throughput execution
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
 - `gemini-3.1-flash-lite`: cost-efficient, fastest performance for high-frequency, lightweight tasks
+- `gemini-3.5-transcribe`: fast speech-to-text with smart and verbatim modes
 - `gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens, high-quality image generation and editing
 - `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing
 - `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
@@ -352,6 +353,7 @@ For streaming with tools, thinking, agents, and image generation see the full [S
 
 **Multimodal Understanding:**
 - [Audio](https://ai.google.dev/gemini-api/docs/interactions/audio.md.txt)
+- [Audio Transcription](https://ai.google.dev/gemini-api/docs/transcribe.md.txt)
 - [Video Understanding](https://ai.google.dev/gemini-api/docs/interactions/video-understanding.md.txt)
 - [Document Processing](https://ai.google.dev/gemini-api/docs/interactions/document-processing.md.txt)
 

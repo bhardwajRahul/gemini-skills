@@ -15,6 +15,7 @@ description: Use this skill when building applications with Gemini API hosted mo
 - `gemini-3.7-flash`: 1M tokens, fast, balanced performance for agentic and multimodal tasks
 - `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model for high-throughput execution
 - `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
+- `gemini-3.5-transcribe`: fast speech-to-text with smart and verbatim modes
 - `gemini-3-pro-image-preview` (Nano Banana Pro): 65k / 32k tokens, image generation and editing
 - `gemini-3.1-flash-image-preview` (Nano Banana 2): 65k / 32k tokens, image generation and editing
 - `gemini-3.1-flash-lite-image-preview` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
@@ -154,6 +155,7 @@ Key pages:
 - [Text generation](https://ai.google.dev/gemini-api/docs/text-generation.md.txt)
 - [Function calling](https://ai.google.dev/gemini-api/docs/function-calling.md.txt)
 - [Structured outputs](https://ai.google.dev/gemini-api/docs/structured-output.md.txt)
+- [Audio Transcription](https://ai.google.dev/gemini-api/docs/generate-content/transcribe.md.txt)
 - [Image generation](https://ai.google.dev/gemini-api/docs/image-generation.md.txt)
 - [Image understanding](https://ai.google.dev/gemini-api/docs/image-understanding.md.txt)
 - [Embeddings](https://ai.google.dev/gemini-api/docs/embeddings.md.txt)

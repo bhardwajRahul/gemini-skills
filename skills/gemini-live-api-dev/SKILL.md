@@ -27,6 +27,7 @@ Key capabilities:
 ## Models
 
 - `gemini-3.1-flash-live-preview` — Optimized for low-latency, real-time dialogue. Native audio output, thinking (via `thinkingLevel`). 128k context window. **This is the recommended model for all Live API use cases.**
+- `gemini-3.5-transcribe-live` — Real-time streaming speech-to-text with interim hypotheses, finalized transcripts, smart formatting, and Hybrid VAD.
 - `gemini-3.5-live-translate-preview` — Real-time streaming translation model.
 
 > [!WARNING]
@@ -250,6 +251,75 @@ To enable translation, specify a `TranslationConfig` object inside your live ses
 
 ---
 
+## Live Streaming Transcription (Gemini Live Transcribe)
+
+The Live API supports real-time streaming speech-to-text over WebSockets with low-latency interim hypotheses, finalized transcripts, and Hybrid VAD. For full details, see the [Live Transcription Guide](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe.md.txt) and [Colab Cookbook](https://colab.research.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Get_started_transcribe.ipynb).
+
+### Model
+- `gemini-3.5-transcribe-live`
+
+### Modes
+- `smart`: cleans up filler words, resolves inline self-corrections, and structures formatting.
+- `verbatim` (default): exact word-for-word transcript.
+
+### Python
+```python
+config = types.LiveConnectConfig(
+    response_modalities=["TEXT"],
+    input_audio_transcription=types.AudioTranscriptionConfig(),
+)
+
+async with client.aio.live.connect(model="gemini-3.5-transcribe-live", config=config) as session:
+    # Stream audio
+    await session.send_realtime_input(audio=types.Blob(data=chunk, mime_type="audio/pcm;rate=16000"))
+    # Hybrid VAD: notify turn end on client-detected silence for zero latency
+    await session.send_realtime_input(audio_stream_end=True)
+```
+
+### JavaScript
+```javascript
+const session = await ai.live.connect({
+  model: 'gemini-3.5-transcribe-live',
+  config: {
+    responseModalities: ['text'],
+    inputAudioTranscription: { mode: 'smart' }
+  },
+  callbacks: {
+    onmessage: (msg) => {
+      if (msg.serverContent?.interimInputTranscription) {
+        console.log('Interim:', msg.serverContent.interimInputTranscription.text);
+      }
+      if (msg.serverContent?.inputTranscription) {
+        console.log('Final:', msg.serverContent.inputTranscription.text);
+      }
+    }
+  }
+});
+
+session.sendRealtimeInput({ audio: { data: chunkBase64, mimeType: 'audio/pcm;rate=16000' } });
+session.sendRealtimeInput({ audioStreamEnd: true }); // Hybrid VAD
+```
+
+### Raw WebSockets
+```json
+{
+  "setup": {
+    "model": "models/gemini-3.5-transcribe-live",
+    "generationConfig": {
+      "responseModalities": ["TEXT"],
+      "speechConfig": {
+        "voiceConfig": {}
+      }
+    },
+    "inputAudioTranscription": {
+      "mode": "smart"
+    }
+  }
+}
+```
+
+---
+
 ## Limitations
 
 - **Response modality** — Only `TEXT` **or** `AUDIO` per session, not both. Native audio models only support audio.
@@ -316,6 +386,7 @@ This index contains links to all documentation pages in `.md.txt` format. Use we
 > Those are not all the documentation pages. Use the `llms.txt` index to discover available documentation pages
 
 - [Live API Overview](https://ai.google.dev/gemini-api/docs/live.md.txt) — getting started, raw WebSocket usage
+- [Live Transcription](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe.md.txt) — real-time speech-to-text, interim hypotheses, smart formatting, and Hybrid VAD
 - [Live Translate](https://ai.google.dev/gemini-api/docs/live-api/live-translate.md.txt) — configuration options and capabilities for translation
 - [Live API Capabilities Guide](https://ai.google.dev/gemini-api/docs/live-guide.md.txt) — voice config, transcription config, native audio (thinking), VAD configuration, media resolution
 - [Live API Tool Use](https://ai.google.dev/gemini-api/docs/live-tools.md.txt) — function calling (sync and async), Google Search grounding
