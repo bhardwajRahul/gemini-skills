@@ -21,7 +21,7 @@ description: Use this skill when writing code that calls the Gemini API for text
 - `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing
 - `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing
 - `gemini-3.1-flash-tts-preview`: expressive text-to-speech with Director's Chair prompting
-- `gemini-omni-flash-preview`: video generation, image-referenced video generation, first-frame-to-video, and video editing
+- `gemini-omni-1.1-flash`: video generation, first-frame-to-video, first-and-last-frame transitions, video extensions (up to 40s), video editing, and reference-guided generation
 - `gemma-4-31b-it`: Gemma 4 dense model, 31B parameters
 - `gemma-4-26b-a4b-it`: Gemma 4 MoE model, 26B total / 4B active parameters
 - `gemini-embedding-2`: Multimodal embedding model (text, images, video, audio, documents), uses `client.models.embed_content`
@@ -347,6 +347,7 @@ For streaming with tools, thinking, agents, and image generation see the full [S
 - [Thought Signatures](https://ai.google.dev/gemini-api/docs/interactions/thought-signatures.md.txt)
 - [Image Generation](https://ai.google.dev/gemini-api/docs/interactions/image-generation.md.txt)
 - [Image Understanding](https://ai.google.dev/gemini-api/docs/interactions/image-understanding.md.txt)
+- [Video Generation & Editing (Omni Flash)](https://ai.google.dev/gemini-api/docs/omni.md.txt)
 - [Speech Generation](https://ai.google.dev/gemini-api/docs/interactions/speech-generation.md.txt)
 - [Music Generation](https://ai.google.dev/gemini-api/docs/interactions/music-generation.md.txt)
 - [Embeddings](https://ai.google.dev/gemini-api/docs/embeddings.md.txt)
