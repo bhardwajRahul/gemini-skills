@@ -94,8 +94,6 @@ def sanitize_error(err):
             err_str = f"HTTP Error Response: {title_match.group(1).strip()}"
         else:
             err_str = re.sub(r'<[^>]+>', ' ', err_str)
-    else:
-        err_str = re.sub(r'<[^>]+>', ' ', err_str)
 
     # 7. Collapse excessive whitespace and cap oversized error dumps
     err_str = re.sub(r'\s+', ' ', err_str).strip()
@@ -420,8 +418,14 @@ def generate_video(
             img_start_num = (2 if last_frame and last_frame != first_frame else 1) if first_frame else 0
             for idx, _ in enumerate(ref_images):
                 ref_parts.append(f"<IMAGE_REF_{idx}>@Image{img_start_num + idx + 1}")
+            vid_start_num = 1
+            if video_path:
+                if isinstance(video_path, list):
+                    vid_start_num += len(video_path)
+                else:
+                    vid_start_num += 1
             for idx, _ in enumerate(ref_videos):
-                ref_parts.append(f"<VIDEO_REF_{idx}>@Video{2 + idx}")
+                ref_parts.append(f"<VIDEO_REF_{idx}>@Video{vid_start_num + idx + 1}")
             
             if ref_parts:
                 prompt_text = f"{sources_part} [# References {' '.join(ref_parts)}] {prompt_text}"

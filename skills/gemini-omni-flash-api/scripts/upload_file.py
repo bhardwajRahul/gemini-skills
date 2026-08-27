@@ -78,8 +78,6 @@ def sanitize_error(err):
             err_str = f"HTTP Error Response: {title_match.group(1).strip()}"
         else:
             err_str = re.sub(r'<[^>]+>', ' ', err_str)
-    else:
-        err_str = re.sub(r'<[^>]+>', ' ', err_str)
 
     # 7. Collapse excessive whitespace and cap oversized error dumps
     err_str = re.sub(r'\s+', ' ', err_str).strip()
