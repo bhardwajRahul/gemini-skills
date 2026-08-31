@@ -50,8 +50,8 @@ description: Use this skill when writing code that calls the Gemini API for text
 ## Important Additional Notes
 
 - **Before writing any code**, you MUST fetch the relevant documentation page from the list below that matches the user's task. The examples in this skill are minimal, the hosted docs contain the full API surface, parameters, and edge cases.
-- Interactions are **stored by default** (`store=true`). Paid tier retains for 55 days, free tier for 1 day.
-- Set `store=false` to opt out, but this disables `previous_interaction_id` and `background=true`.
+- Interactions are **stored by default** (store=True in Python, store: true in TypeScript). Paid tier retains for 55 days, free tier for 1 day.
+- Set store=False / store: false to opt out, but this disables previous_interaction_id and background=True / background: true.
 - `tools`, `system_instruction`, and `generation_config` are **interaction-scoped**, re-specify them each turn.
 - **Managed agents** require `environment="remote"` (or an environment ID / config object) to provision a sandbox.
 - **Migrating from `generateContent`**: Read `references/migration.md` for the scoping, checklist, and before/after code examples. Always confirm scope with the user before editing.
